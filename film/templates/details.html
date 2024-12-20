@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block header %}Film Details{% endblock %}
+
+{% block content %}
+<div>
+    <h3>Film</h3>
+        <p>{{film.name}}</p>
+        <p>{{film.genres}}</p>
+        <p>{{film.directed}}</p>
+        <p>{{film.producers}}</p>
+        <p>{{film.screenwriters}}</p>
+        <p>{{film.cinematographer}}</p>
+        <p>{{film.year}}</p>
+</div>
+{% endblock %}
