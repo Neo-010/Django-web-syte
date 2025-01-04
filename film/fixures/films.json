@@ -1,0 +1,67 @@
+[
+    {
+        "pk": 1,
+        "model": "films.Film",
+        "fields": {
+            "name": "Inception",
+            "Genres": "Science Fiction",
+            "Directed": "Christopher Nolan",
+            "Producers": "Emma Thomas, Christopher Nolan",
+            "Screenwriters": "Christopher Nolan",
+            "Cinematographer": "Wally Pfister",
+            "Year": 2010
+        }
+    },
+    {
+        "pk": 2,
+        "model": "films.Film",
+        "fields": {
+            "name": "The Shawshank Redemption",
+            "Genres": "Drama",
+            "Directed": "Frank Darabont",
+            "Producers": "Niki Marvin",
+            "Screenwriters": "Frank Darabont",
+            "Cinematographer": "Roger Deakins",
+            "Year": 1994
+        }
+    },
+    {
+        "pk": 3,
+        "model": "films.Film",
+        "fields": {
+            "name": "The Godfather",
+            "Genres": "Crime",
+            "Directed": "Francis Ford Coppola",
+            "Producers": "Albert S. Ruddy",
+            "Screenwriters": "Mario Puzo, Francis Ford Coppola",
+            "Cinematographer": "Gordon Willis",
+            "Year": 1972
+        }
+    },
+    {
+        "pk": 4,
+        "model": "films.Film",
+        "fields": {
+            "name": "The Dark Knight",
+            "Genres": "Action",
+            "Directed": "Christopher Nolan",
+            "Producers": "Emma Thomas, Charles Roven, Christopher Nolan",
+            "Screenwriters": "Jonathan Nolan, Christopher Nolan",
+            "Cinematographer": "Wally Pfister",
+            "Year": 2008
+        }
+    },
+    {
+        "pk": 5,
+        "model": "films.Film",
+        "fields": {
+            "name": "Pulp Fiction",
+            "Genres": "Crime",
+            "Directed": "Quentin Tarantino",
+            "Producers": "Lawrence Bender",
+            "Screenwriters": "Quentin Tarantino, Roger Avary",
+            "Cinematographer": "Andrzej Sekula",
+            "Year": 1994
+        }
+    }
+]
