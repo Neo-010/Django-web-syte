@@ -1,8 +1,8 @@
+# film/forms.py
 from django import forms #type: ignore
-from film.models import Film
+from .models import Film
 
-
-class CreateFilm(forms.ModelForm):
+class FilmForm(forms.ModelForm):
     class Meta:
         model = Film
-        fields = "__all__"
+        fields = '__all__'

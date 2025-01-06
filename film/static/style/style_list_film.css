@@ -1,0 +1,104 @@
+body {
+    background-color: #310707d2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    margin: 20px auto;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.no_f {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+    color: #000000;
+    table-layout: auto;
+}
+
+table thead tr {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 10px 15px;
+    border: 1.5px solid #fdfdfdd2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/* Покращує відображення кнопок */
+table td a {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+table td a.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+table td a.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+        /* Зменшення шрифту на малих екранах */
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 8px 12px;
+    }
+
+    table td {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+}
+
+#del1{
+    margin: 5px;
+    padding: 10px;
+}

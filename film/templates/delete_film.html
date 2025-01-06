@@ -1,0 +1,19 @@
+{% extends '_layout.html' %}
+{% load static %}
+
+{% block header %} <h1> Delete Film </h1>{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'style/style_del.css' %}">
+
+<h1>Are you sure you want to delete "{{ film.name }}"?</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-danger" id="delete">Delete</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary" id="delete">Cancel</a>
+
+</form>
+{% endblock %}
