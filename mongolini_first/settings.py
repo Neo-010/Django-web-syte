@@ -11,11 +11,14 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #type: ignore
+=======
+>>>>>>> 68cdfb849ce52235a489914a0e13f457e181b026
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,8 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'film'
     ]
+=======
+]
+>>>>>>> 68cdfb849ce52235a489914a0e13f457e181b026
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +67,11 @@ ROOT_URLCONF = 'mongolini_first.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'templates'],  # Додайте цю лінію
+=======
+        'DIRS': [],
+>>>>>>> 68cdfb849ce52235a489914a0e13f457e181b026
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,10 +133,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+=======
+>>>>>>> 68cdfb849ce52235a489914a0e13f457e181b026
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
