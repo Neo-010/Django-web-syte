@@ -23,10 +23,10 @@
     </div>
 
     {% endfor %}
+    <button type="submit" class="btn btn-primary" href="{% url 'list' %}">Save</button>
 
     
-    <button type="submit" class="btn btn-primary">Save</button>
 
-    <a href="/">Go to list</a>
+    <a href="{% url 'list' %}">Go to list</a>
 </form>
 {% endblock %}

@@ -4,9 +4,13 @@ from django.urls import reverse # type: ignore
 from .forms import FilmForm
 from film.models import Film
 
-def home(request):
+def list(request):
     films = Film.objects.all() 
     return render(request, 'film/film_list.html', {'films': films})
+
+def home(request):
+    films = Film.objects.all() 
+    return render(request, 'home.html', {'films': films})
 
 def create(request):
     if request.method == 'POST':

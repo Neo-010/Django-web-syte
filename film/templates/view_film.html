@@ -5,11 +5,10 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'style/style_view.css' %}">
 
-<h2>{{ film.name }}</h2>
-
 <div class="conteiner">
     <ul class="list-group">
-    
+
+        <li class="list-group-item"><strong>Title:</strong> {{ film.name }}</li>
         <li class="list-group-item"><strong>Genres:</strong> {{ film.genres }}</li>
         <li class="list-group-item"><strong>Directed by:</strong> {{ film.directed }}</li>
         <li class="list-group-item"><strong>Producers:</strong> {{ film.producers }}</li>

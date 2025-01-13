@@ -22,6 +22,7 @@ h1 {
     box-sizing: border-box;
     width: 100%;
     border-radius: 20px;
+    overflow-x: auto;
 }
 
 .no_f {
@@ -55,7 +56,6 @@ table td {
     background-color: #ffffff;
 }
 
-/* Покращує відображення кнопок */
 table td a {
     display: inline-block;
     margin-right: 10px;
@@ -74,12 +74,9 @@ table td a.btn-info {
     background-color: #17a2b8;
     color: white;
 }
-
-/* Адаптивність для мобільних пристроїв */
 @media (max-width: 768px) {
     table {
         font-size: 14px;
-        /* Зменшення шрифту на малих екранах */
         width: 100%;
     }
 
