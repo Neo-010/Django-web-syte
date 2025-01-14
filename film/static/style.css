@@ -1,15 +1,17 @@
 /* Загальні стилі */
 body {
-    background-color: #310707d2;;
+    background-color: #310707d2;
     font-family: Arial, sans-serif;
     color: #ffffff;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Заголовки */
 h1 {
     font-size: 2.5rem;
+    /* Стандартний розмір заголовку */
     text-align: center;
     color: #ffffff;
     margin-bottom: 30px;
@@ -17,31 +19,28 @@ h1 {
 
 /* Основний контейнер */
 .container {
+    width: 100%;
     max-width: 1200px;
+    /* Максимальна ширина контейнера */
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-/* Логотип навігації */
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* Таблиця */
+table {
+    width: 100%;
+    /* Таблиця повинна займати 100% ширини */
+    border-collapse: collapse;
+    font-size: 16px;
 }
 
-/* Навігація */
-.navbar {
-    background-color: #333;
-}
-
-.navbar-nav .nav-link {
-    color: #000000 !important;
-    font-size: 1.1rem;
-}
-
-.navbar-nav .nav-link:hover {
-    background-color: #8f8787;
-    border-radius: 5px;
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
 /* Кнопки пошуку */
@@ -73,9 +72,10 @@ footer span {
 }
 
 /* Адаптивність для мобільних пристроїв */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        /* Зменшуємо розмір заголовка */
     }
 
     .navbar-nav .nav-link {
@@ -83,6 +83,70 @@ footer span {
     }
 
     .container {
+        padding: 15px;
+        /* Зменшуємо відступи для менших екранів */
+    }
+
+    table th,
+    table td {
+        font-size: 14px;
+        /* Зменшуємо шрифт в таблиці */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        /* Зменшуємо розмір заголовка */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        text-align: center;
+        /* Центруємо текст в навігації */
+    }
+
+    .container {
         padding: 10px;
+        width: 100%;
+        /* Розширюємо контейнер до 100% */
+    }
+
+    footer span {
+        font-size: 0.9rem;
+        /* Зменшуємо розмір шрифта в футері */
+    }
+
+    table th,
+    table td {
+        font-size: 12px;
+        /* Ще більше зменшуємо шрифт в таблиці */
+        padding: 8px;
+        /* Зменшуємо відступи в таблиці */
+    }
+}
+
+/* Адаптивність для дуже малих екранів (мобільні телефони) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+        /* Ще менший заголовок */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 5px;
+        /* Зменшуємо padding у футері */
+    }
+
+    table th,
+    table td {
+        font-size: 10px;
+        /* Ще більше зменшуємо шрифт для мобільних */
+        padding: 5px;
+        /* Зменшуємо відступи в таблиці */
     }
 }

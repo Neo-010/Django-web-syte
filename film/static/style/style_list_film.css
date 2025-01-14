@@ -1,3 +1,4 @@
+/* Загальні стилі */
 body {
     background-color: #310707d2;
     min-height: 100vh;
@@ -8,14 +9,15 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Заголовки */
 h1 {
     text-align: center;
     margin-bottom: 20px;
     color: rgb(255, 255, 255);
 }
 
+/* Основний контейнер */
 .container {
-    margin: 20px auto;
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
@@ -25,10 +27,12 @@ h1 {
     overflow-x: auto;
 }
 
+/* Повідомлення про відсутність фільмів */
 .no_f {
     text-align: center;
 }
 
+/* Таблиця */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -74,6 +78,27 @@ table td a.btn-info {
     background-color: #17a2b8;
     color: white;
 }
+
+/* Адаптивність таблиці */
+table td {
+    max-width: 150px;
+    /* Обмеження ширини тексту */
+    white-space: nowrap;
+    /* Заборона перенесення рядків */
+    overflow: hidden;
+    /* Відсічення тексту, що виходить за межі */
+    text-overflow: ellipsis;
+    /* Додавання "..." для обрізаного тексту */
+}
+
+table td:hover {
+    white-space: normal;
+    /* Показати повний текст при наведенні */
+    word-wrap: break-word;
+    /* Перенесення слів */
+}
+
+/* Адаптивність для екранів менше 768px */
 @media (max-width: 768px) {
     table {
         font-size: 14px;
@@ -93,9 +118,53 @@ table td a.btn-info {
         font-size: 1.5em;
         margin-bottom: 10px;
     }
+
+    /* Додаємо горизонтальну прокрутку для таблиці на маленьких екранах */
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    /* Зменшення розмірів кнопок для маленьких екранів */
+    table td a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    #del1 {
+        margin: 5px;
+        padding: 8px;
+    }
 }
 
-#del1{
-    margin: 5px;
-    padding: 10px;
+/* Адаптивність для дуже малих екранів (мобільні телефони) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    table th,
+    table td {
+        padding: 6px 10px;
+    }
+
+    table td {
+        font-size: 10px;
+        max-width: 100px;
+    }
+
+    table td a {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    #del1 {
+        margin: 3px;
+        padding: 6px;
+    }
 }

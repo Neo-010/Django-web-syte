@@ -15,8 +15,13 @@
         <li class="list-group-item"><strong>Screenwriters:</strong> {{ film.screenwriters }}</li>
         <li class="list-group-item"><strong>Cinematographer:</strong> {{ film.cinematographer }}</li>
         <li class="list-group-item"><strong>Year:</strong> {{ film.year }}</li>
-        <li class="list-group-item"><strong>Poster:</strong><img src="{{ film.image.url }}" alt="{{ film.name }}"
-                class="img-fluid" style="max-width: 100px;"></li>
+        <li class="list-group-item"><strong>Poster:</strong>
+            {% if film.image %}
+            <img src="{{ film.image.url }}" alt="{{ film.name }}" class="img-fluid" style="max-width: 100px;">
+            {% else %}
+            <span>No image available</span>
+            {% endif %}
+        </li>
     
     </ul>
 

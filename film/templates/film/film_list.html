@@ -1,50 +1,37 @@
 {% extends '_layout.html' %}
 {% load static %}
 
-{% block header %} <h1> Film Collection </h1> {% endblock %}
+{% block header %}
+<h1>Колекція фільмів</h1>
+{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'style/style_list_film.css' %}">
 
-<div class="container">
-    
-    <table>
-        <thead>
-            <tr>
-                <th>№</th>
-                <th>Name</th>
-                <th>Genres</th>
-                <th>Directed</th>
-                <th>Producers</th>
-                <th>Screenwrit.</th>
-                <th>Cinematog.</th>
-                <th>Year</th>
-                <th>About</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for film in films %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ film.name }}</td>
-                <td>{{ film.genres }}</td>
-                <td>{{ film.directed }}</td>
-                <td>{{ film.producers }}</td>
-                <td>{{ film.screenwriters }}</td>
-                <td>{{ film.cinematographer }}</td>
-                <td>{{ film.year }}</td>
-                <td>
-                    <a href="{% url 'delete' pk=film.pk %}" class="btn btn-danger" id="del1">Del</a>
-                    <a href="{% url 'view_film' pk=film.pk %}" class="btn btn-info" id="del1">Inf</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="9" class="no_f">No films found.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
+<div class="d-flex flex-wrap justify-content-center gap-4"> <!-- Два фільми в ряд -->
+    {% for film in films %}
+    <div class="card" style="width: 45%; min-width: 300px; max-width: 500px;">
+        {% if film.poster %}
+        <img src="{{ film.image.url }}" class="card-img-top" alt="Poster" style="height: 250px; object-fit: cover;">
+        {% else %}
+        <div class="d-flex justify-content-center align-items-center"
+            style="height: 250px; background-color: #f8f9fa; border: 1px dashed #6c757d;">
+            <span style="color: #6c757d; font-size: 1.2rem; font-weight: bold;">Постер не знайдено</span>
+        </div>
+        {% endif %}
+        <p>Poster URL: {{ film.poster }}</p>
+        <div class="card-body text-center">
+            <h5 class="card-title" style="font-weight: bold; color: #000;">{{ film.name }}</h5>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a href="{% url 'view_film' pk=film.pk %}" class="btn btn-info btn-sm">Inf</a>
+            <a href="{% url 'delete' pk=film.pk %}" class="btn btn-danger btn-sm">Del</a>
+        </div>
+    </div>
+    {% empty %}
+    <div class="text-center w-100">
+        <p class="text-center">Фільми відсутні.</p>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

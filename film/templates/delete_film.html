@@ -12,7 +12,7 @@
 
     {% csrf_token %}
 
-    <button type="submit" class="btn btn-danger" id="delete">Delete</button>
+    <button type="submit" class="btn btn-danger" id="delete" href="{% url 'list' %}">Delete</button>
     <a href="{% url 'home' %}" class="btn btn-secondary" id="delete">Cancel</a>
 
 </form>

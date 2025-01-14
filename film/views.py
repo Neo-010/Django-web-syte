@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
 from django.urls import reverse # type: ignore
 from .forms import FilmForm
 from film.models import Film
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 def list(request):
     films = Film.objects.all() 
@@ -17,10 +21,10 @@ def create(request):
         form = FilmForm(request.POST, request.FILES)  
         if form.is_valid():
             film = form.save()  # зберігаємо
-            print(f"Film created: {film}")  # перевірка в консолі
-            return redirect('home')  # виконуємо редірект на home
+            logger.debug(f"Film created: {film.name}, Poster: {film.poster.url}")
+            return redirect('home')
         else:
-            print(form.errors)  # якщо є помилки
+            logger.error(f"Form is invalid: {form.errors}")
     else:
         form = FilmForm()
     return render(request, 'film/create.html', {'form': form})
@@ -46,7 +50,7 @@ def delete(request, pk):
     film = get_object_or_404(Film, pk=pk)
     if request.method == "POST":
         film.delete()
-        return redirect('home')
+        return redirect('list')  # редірект на сторінку списку фільмів
     return render(request, 'delete_film.html', {'film': film})
 
 
