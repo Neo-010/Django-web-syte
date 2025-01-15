@@ -12,7 +12,7 @@
     {% for film in films %}
     <div class="card" style="width: 45%; min-width: 300px; max-width: 500px;">
         {% if film.poster %}
-        <img src="{{ film.image.url }}" class="card-img-top" alt="Poster" style="height: 250px; object-fit: cover;">
+        <img src="{{ film.poster.url }}" class="card-img-top" alt="Poster" style="height: 250px; object-fit: cover;">
         {% else %}
         <div class="d-flex justify-content-center align-items-center"
             style="height: 250px; background-color: #f8f9fa; border: 1px dashed #6c757d;">

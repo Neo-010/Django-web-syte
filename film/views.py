@@ -18,10 +18,10 @@ def home(request):
 
 def create(request):
     if request.method == 'POST':
-        form = FilmForm(request.POST, request.FILES)  
+        form = FilmForm(request.POST, request.FILES)  # Обробка файлів
         if form.is_valid():
-            film = form.save()  # зберігаємо
-            logger.debug(f"Film created: {film.name}, Poster: {film.poster.url}")
+            film = form.save()
+            logger.debug(f"Film created: {film.name}, Poster: {film.poster.url if film.poster else 'No poster uploaded'}")
             return redirect('home')
         else:
             logger.error(f"Form is invalid: {form.errors}")
