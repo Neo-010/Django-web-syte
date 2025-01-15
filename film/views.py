@@ -40,6 +40,25 @@ def view_film(request, pk):
     film = get_object_or_404(Film, pk=pk)
     return render(request, 'view_film.html', {'film': film})
 
+def edit(request, pk):
+    # Отримуємо фільм за pk
+    film = get_object_or_404(Film, pk=pk)
+
+    # Якщо форма була надіслана (POST)
+    if request.method == 'POST':
+        form = FilmForm(request.POST, request.FILES, instance=film)  # Передаємо існуючий об'єкт для редагування
+        if form.is_valid():
+            film = form.save()  # Зберігаємо зміни
+            logger.debug(f"Film updated: {film.name}, Poster: {film.poster.url if film.poster else 'No poster uploaded'}")
+            return redirect('home')  # Перенаправлення на домашню сторінку
+        else:
+            logger.error(f"Form is invalid: {form.errors}")
+    else:
+        form = FilmForm(instance=film)  # Заповнюємо форму існуючими даними
+
+    return render(request, 'edit.html', {'form': form, 'film': film})
+
+
 def about(request):
     return HttpResponse("<h1>About Page!</h1>")
 

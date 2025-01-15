@@ -60,8 +60,10 @@ ROOT_URLCONF = 'mongolini_first.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            BASE_DIR / 'templates',  # Перевірте, що цей шлях є
+        ],
+        'APP_DIRS': True,  # Це дозволяє шукати шаблони у ваших додатках
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

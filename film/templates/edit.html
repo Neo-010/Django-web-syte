@@ -1,0 +1,30 @@
+{% extends '_layout.html' %}
+
+{% block header %} 
+  <h1>Edit Film: {{ film.name }}</h1> 
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'style/style_view.css' %}">
+<form method="POST" enctype="multipart/form-data"></form>
+{% csrf_token %}
+
+    {% for field in form %}
+
+    <div class="mb-3">
+
+        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+        {{ field }}
+
+
+    </div>
+
+    {% endfor %}
+   
+    
+
+    <a href="{% url 'list' %}" class="btn btn-primary mt-3">Go to list</a>
+    <a href="{% url 'list' %}" class="btn btn-primary mt-3">Save</a>
+</form>
+{% endblock %}

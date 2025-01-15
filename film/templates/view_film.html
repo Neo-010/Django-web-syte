@@ -11,13 +11,10 @@
         <li class="list-group-item"><strong>Title:</strong> {{ film.name }}</li>
         <li class="list-group-item"><strong>Genres:</strong> {{ film.genres }}</li>
         <li class="list-group-item"><strong>Directed by:</strong> {{ film.directed }}</li>
-        <li class="list-group-item"><strong>Producers:</strong> {{ film.producers }}</li>
-        <li class="list-group-item"><strong>Screenwriters:</strong> {{ film.screenwriters }}</li>
-        <li class="list-group-item"><strong>Cinematographer:</strong> {{ film.cinematographer }}</li>
         <li class="list-group-item"><strong>Year:</strong> {{ film.year }}</li>
         <li class="list-group-item"><strong>Poster:</strong>
-            {% if film.image %}
-            <img src="{{ film.image.url }}" alt="{{ film.name }}" class="img-fluid" style="max-width: 100px;">
+            {% if film.poster %}
+            <img src="{{ film.poster.url }}" alt="{{ film.name }}" class="img-fluid" style="max-width: 100px;">
             {% else %}
             <span>No image available</span>
             {% endif %}
@@ -33,4 +30,5 @@
 
 <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to list</a>
 
+<a href="{% url 'edit' pk=film.pk %}" class="btn btn-primary mt-3">Edit</a>
 {% endblock %}
