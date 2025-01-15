@@ -7,7 +7,7 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'style/style_view.css' %}">
-<form method="POST" enctype="multipart/form-data"></form>
+<form method="POST" enctype="multipart/form-data">
 {% csrf_token %}
 
     {% for field in form %}
@@ -25,6 +25,6 @@
     
 
     <a href="{% url 'list' %}" class="btn btn-primary mt-3">Go to list</a>
-    <a href="{% url 'list' %}" class="btn btn-primary mt-3">Save</a>
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
 </form>
 {% endblock %}

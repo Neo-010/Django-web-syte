@@ -50,7 +50,7 @@ def edit(request, pk):
         if form.is_valid():
             film = form.save()  # Зберігаємо зміни
             logger.debug(f"Film updated: {film.name}, Poster: {film.poster.url if film.poster else 'No poster uploaded'}")
-            return redirect('home')  # Перенаправлення на домашню сторінку
+            return redirect('list')  # Перенаправлення на домашню сторінку
         else:
             logger.error(f"Form is invalid: {form.errors}")
     else:
