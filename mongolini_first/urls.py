@@ -5,7 +5,7 @@ from django.urls import path, include # type: ignore
 from film import views 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Адмін-панель
+    path('admin/', admin.site.urls, name='admin'),  # Адмін-панель
     path('', views.home, name='home'),  # Головна сторінка
     path('film/', include('film.urls')),  # Підключення URL-патернів з додатку "film"
 ]

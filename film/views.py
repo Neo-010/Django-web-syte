@@ -73,5 +73,4 @@ def delete(request, pk):
     return render(request, 'delete_film.html', {'film': film})
 
 
-def about(request):
-    return HttpResponse("<h1>About Page!</h1>")
+
