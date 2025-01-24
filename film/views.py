@@ -73,4 +73,15 @@ def delete(request, pk):
     return render(request, 'delete_film.html', {'film': film})
 
 
+def toggle_favorite(request, pk):
+    film = get_object_or_404(Film, pk=pk)
+    film.is_favorite = not film.is_favorite  # Перемикаємо статус "улюблений"
+    film.save()
+    
+    # Перенаправляємо на сторінку зі списком улюблених фільмів
+    return redirect('favorite_list')  # Перенаправлення на список улюблених фільмів
+
+def favorite_list(request):
+    films = Film.objects.filter(is_favorite=True)  # Отримуємо тільки улюблені фільми
+    return render(request, 'favorite.html', {'films': films}) 
 

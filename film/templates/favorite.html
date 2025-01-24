@@ -1,0 +1,42 @@
+{% extends '_layout.html' %}
+
+{% block header %}
+<h1>Favorite Film</h1>
+{% endblock %}
+
+{% block content %}
+{% if films %}
+<div class="d-flex flex-wrap justify-content-center gap-4"> <!-- Два фільми в ряд -->
+    {% for film in films %}
+    <div class="card" style="width: 45%; min-width: 300px; max-width: 500px;">
+        {% if film.poster %}
+        <img src="{{ film.poster.url }}" class="card-img-top" alt="Poster" style="height: 250px; object-fit: cover;">
+        {% else %}
+        <div class="d-flex justify-content-center align-items-center"
+            style="height: 250px; background-color: #f8f9fa; border: 1px dashed #6c757d;">
+            <span style="color: #6c757d; font-size: 1.2rem; font-weight: bold;">Постер не знайдено</span>
+        </div>
+        {% endif %}
+        <p>Poster URL: {{ film.poster }}</p>
+        <div class="card-body text-center">
+            <h5 class="card-title" style="font-weight: bold; color: #000;">{{ film.name }}</h5>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary btn-sm" >
+                {% if film.is_favorite %}
+                Unfavorite
+                {% else %}
+                Favorite
+                {% endif %}
+            </button>
+            <a href="{% url 'view_film' pk=film.pk %}" class="btn btn-info btn-sm">Inf</a>
+        </div>
+    </div>
+    {% empty %}
+    <div class="text-center w-100">
+        <p class="text-center">Фільми відсутні.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

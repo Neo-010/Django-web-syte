@@ -6,6 +6,8 @@ class Film(models.Model):
     directed = models.CharField(max_length=255)
     year = models.IntegerField()
     poster = models.ImageField(upload_to='images/', blank=True, null=True)
+    is_favorite = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+    
